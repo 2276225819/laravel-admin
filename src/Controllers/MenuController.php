@@ -73,9 +73,9 @@ class MenuController extends Controller
                 $payload = "<i class='fa {$branch['icon']}'></i>&nbsp;<strong>{$branch['title']}</strong>";
 
                 if (!isset($branch['children'])) {
-                    $uri = admin_url($branch['uri']);
+                    $uri = asset($branch['uri']);
 
-                    $payload .= "&nbsp;&nbsp;&nbsp;<a href=\"$uri\" class=\"dd-nodrag\">$uri</a>";
+                    $payload .= "&nbsp;&nbsp;&nbsp;<a href=\"$uri\" class=\"dd-nodrag\">{$branch['uri']}</a>";
                 }
 
                 return $payload;

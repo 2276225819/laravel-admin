@@ -7,7 +7,7 @@
     <div class="icon">
         <i class="fa fa-{{ $icon }}"></i>
     </div>
-    <a href="{{ $link }}" class="small-box-footer">
+    <a href="{{ asset($link) }}" class="small-box-footer">
         {{ trans('admin::lang.more') }}&nbsp;
         <i class="fa fa-arrow-circle-right"></i>
     </a>

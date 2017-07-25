@@ -11,14 +11,14 @@ class BatchDelete extends BatchAction
     {
         $confirm = trans('admin::lang.delete_confirm');
 
-        return <<<EOT
+        return "
 
 $('{$this->getElementClass()}').on('click', function() {
 
-    if(confirm("{$confirm}")) {
+    if(confirm(\"{$confirm}\")) {
         $.ajax({
             method: 'post',
-            url: '{$this->resource}/' + selectedRows().join(),
+            url: '".asset($this->resource)."/' + selectedRows().join(),
             data: {
                 _method:'delete',
                 _token:'{$this->getToken()}'
@@ -38,6 +38,6 @@ $('{$this->getElementClass()}').on('click', function() {
     }
 });
 
-EOT;
+";
     }
 }
