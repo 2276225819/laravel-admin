@@ -213,7 +213,7 @@ class Tree implements Renderable
         $('.{$this->elementId}-save').click(function () {
             var serialize = $('#{$this->elementId}').nestable('serialize');
 
-            $.post('{$this->path}', {
+            $.post('".asset($this->path)."', {
                 _token: LA.token,
                 _order: JSON.stringify(serialize)
             },
